@@ -25,7 +25,7 @@ public class HomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String home(@RequestParam(value = "pageIndex", defaultValue = "1") Integer pageIndex, ModelMap model, HttpServletRequest request) {
         Pager pager = new Pager(pageIndex, 4, articleService.count());
-        model.addAttribute("mainPage", "user/article/articleList.vm");
+        model.addAttribute("mainPage", "user/article/articlelist.vm");
         model.addAttribute("articles", articleService.getPageArticles(pager));
         model.addAttribute("pager", pager);
         return "index";
