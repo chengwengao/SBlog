@@ -16,6 +16,8 @@ Sblog采用Spring ＋ SpringMVC ＋ Velocity ＋ Sql2o 完成。SBlog具有以�
 
 ##注意事项
 
+- 用户名:admin 用户密码:admin
+
 - 不要随便删除用户,每个用户和文章有关联。删除用户后文章就不能显示！
 
 - 友情链接请在编辑关于页面中手动添加。
