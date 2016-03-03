@@ -12,7 +12,7 @@ Sblog采用Spring ＋ SpringMVC ＋ Velocity ＋ Sql2o 完成。SBlog具有以�
 
 - 本人专科18岁小菜鸟（今年大一）经过两位前辈指点，从只懂Java基础到用Servlet做出Blog，再到SpringMVC改进Blog.
 
-- 🙏感谢[王爵](http://biezhi.me "王爵")、[jack_bj](http://www.codingyun.com "jack_bj")的帮助。
+- 🙏感谢[王爵](http://biezhi.me "王爵")、[jack_bj](http://www.codingyun.com "jack_bj")、冰神(icepoint℃冰)的帮助。
 
 ##注意事项
 
@@ -35,7 +35,6 @@ Sblog采用Spring ＋ SpringMVC ＋ Velocity ＋ Sql2o 完成。SBlog具有以�
 
 ##喝了这碗鸡汤
 如果你和我一样只有零星的Java基础，想做东西又感觉什么都做不出来。那么希望你能调整看书看视频和敲代码的时间。多多动手实践，慢慢进步。很多时候你以为你会了并不是你真的会了，只是你以为。只有你可以动手写出来,才是你真的会了。
-
 
 
 
