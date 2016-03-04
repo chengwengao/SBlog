@@ -3,9 +3,9 @@ package com.xingfly.service.impl;
 import com.xingfly.dao.AboutDao;
 import com.xingfly.model.About;
 import com.xingfly.service.AboutService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Service("aboutService")
 public class AboutServiceImpl implements AboutService {
-    @Autowired
+    @Resource
     private AboutDao aboutDao;
 
     @Override

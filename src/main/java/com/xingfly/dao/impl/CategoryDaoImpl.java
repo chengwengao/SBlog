@@ -2,10 +2,10 @@ package com.xingfly.dao.impl;
 
 import com.xingfly.dao.CategoryDao;
 import com.xingfly.model.Category;
-import com.xingfly.util.Pager;
 import com.xingfly.model.dto.CategoryDto;
+import com.xingfly.util.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.data.Row;
@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by SuperS on 15/12/11.
  */
-@Service("categoryDao")
+@Repository
 public class CategoryDaoImpl implements CategoryDao {
     @Autowired
     private Sql2o sql2o;

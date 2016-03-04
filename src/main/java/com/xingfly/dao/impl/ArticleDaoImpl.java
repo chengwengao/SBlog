@@ -3,12 +3,12 @@ package com.xingfly.dao.impl;
 import com.xingfly.dao.ArticleDao;
 import com.xingfly.model.Article;
 import com.xingfly.model.Category;
-import com.xingfly.util.Pager;
 import com.xingfly.model.dto.ArticleDto;
 import com.xingfly.model.dto.ArticleLiteDto;
 import com.xingfly.model.dto.UserDto;
+import com.xingfly.util.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.data.Row;
@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by SuperS on 15/12/11.
  */
-@Service("articleDao")
+@Repository
 public class ArticleDaoImpl implements ArticleDao {
 
     @Autowired

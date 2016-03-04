@@ -2,13 +2,13 @@ package com.xingfly.service.impl;
 
 import com.xingfly.dao.ArticleDao;
 import com.xingfly.model.Article;
-import com.xingfly.util.Pager;
 import com.xingfly.model.dto.ArticleDto;
 import com.xingfly.model.dto.ArticleLiteDto;
 import com.xingfly.service.ArticleService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.xingfly.util.Pager;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Service("articleService")
 public class ArticleServiceImpl implements ArticleService {
-    @Autowired
+    @Resource
     private ArticleDao articleDao;
 
     @Override

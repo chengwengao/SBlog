@@ -2,12 +2,12 @@ package com.xingfly.service.impl;
 
 import com.xingfly.dao.CategoryDao;
 import com.xingfly.model.Category;
-import com.xingfly.util.Pager;
 import com.xingfly.model.dto.CategoryDto;
 import com.xingfly.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.xingfly.util.Pager;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -15,8 +15,9 @@ import java.util.List;
  */
 @Service("categoryService")
 public class CategoryServiceImpl implements CategoryService {
-    @Autowired
+    @Resource
     private CategoryDao categoryDao;
+
     @Override
     public List<CategoryDto> getCategories() {
         List<CategoryDto> categories = null;
@@ -69,9 +70,9 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public int getCount() {
         int count = 0;
-        try{
+        try {
             count = categoryDao.count();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return count;

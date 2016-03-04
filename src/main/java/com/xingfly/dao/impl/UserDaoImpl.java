@@ -5,7 +5,7 @@ import com.xingfly.model.User;
 import com.xingfly.model.dto.UserDto;
 import com.xingfly.util.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.data.Row;
@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by SuperS on 15/12/9.
  */
-@Service("userDao")
+@Repository
 public class UserDaoImpl implements UserDao {
     @Autowired
     private Sql2o sql2o;
