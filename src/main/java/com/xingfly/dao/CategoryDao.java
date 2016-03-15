@@ -4,7 +4,6 @@ import com.xingfly.model.Category;
 import com.xingfly.model.dto.CategoryDto;
 import com.xingfly.util.Pager;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 /**
@@ -12,6 +11,7 @@ import java.util.List;
  */
 @Repository
 public interface CategoryDao {
+
     //获取分类列表
     public List<CategoryDto> all() throws Exception;
 

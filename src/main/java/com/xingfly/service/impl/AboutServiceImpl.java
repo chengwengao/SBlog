@@ -13,6 +13,7 @@ import java.util.List;
  */
 @Service("aboutService")
 public class AboutServiceImpl implements AboutService {
+
     @Resource
     private AboutDao aboutDao;
 

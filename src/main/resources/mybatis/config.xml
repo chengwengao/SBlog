@@ -7,7 +7,7 @@
         <mapper resource="mapper/UserMapper.xml"/>
         <mapper resource="mapper/CategoryMapper.xml"/>
         <mapper resource="mapper/ArticleMapper.xml"/>
-        <mapper resource="mapper/ArticleMapper.xml"/>
+        <mapper resource="mapper/AboutMapper.xml"/>
     </mappers>
 
 </configuration>
