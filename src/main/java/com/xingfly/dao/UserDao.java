@@ -1,14 +1,16 @@
 package com.xingfly.dao;
 
-import com.xingfly.util.Pager;
 import com.xingfly.model.User;
 import com.xingfly.model.dto.UserDto;
+import com.xingfly.util.Pager;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
- * Created by SuperS on 15/12/9.
+ * Created by SuperS on 16/3/8.
  */
+@Repository
 public interface UserDao {
     // 用户登录
     public UserDto login(User user) throws Exception;
@@ -32,5 +34,5 @@ public interface UserDao {
     public List<User> pagenation(Pager pager) throws Exception;
 
     // 是否存在用户
-    public boolean userIsNotEmpty(String name) throws Exception;
+    public int userIsNotEmpty(String name) throws Exception;
 }

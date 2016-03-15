@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC
+        "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="user" type="com.xingfly.model.User"/>
+        <typeAlias alias="category" type="com.xingfly.model.Category"/>
+        <typeAlias alias="about" type="com.xingfly.model.About"/>
+        <typeAlias alias="article" type="com.xingfly.model.Article"/>
+
+        <typeAlias alias="articleDto" type="com.xingfly.model.dto.ArticleDto"/>
+        <typeAlias alias="articleLiteDto" type="com.xingfly.model.dto.ArticleLiteDto"/>
+        <typeAlias alias="categoryDto" type="com.xingfly.model.dto.CategoryDto"/>
+        <typeAlias alias="userDto" type="com.xingfly.model.dto.UserDto"/>
+        <typeAlias alias="pager" type="com.xingfly.util.Pager"/>
+    </typeAliases>
+
+
+    <mappers>
+        <mapper resource="com/xingfly/dao/mapper/CategoryMapper.xml"/>
+        <mapper resource="com/xingfly/dao/mapper/UserMapper.xml"/>
+        <mapper resource="com/xingfly/dao/mapper/AboutMapper.xml"/>
+        <mapper resource="com/xingfly/dao/mapper/Article.xml"/>
+    </mappers>
+
+</configuration>

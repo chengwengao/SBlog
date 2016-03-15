@@ -16,6 +16,7 @@ import java.util.List;
  */
 @Service("articleService")
 public class ArticleServiceImpl implements ArticleService {
+
     @Resource
     private ArticleDao articleDao;
 
@@ -34,29 +35,19 @@ public class ArticleServiceImpl implements ArticleService {
     public List<ArticleDto> getPageArticles(Pager pager) {
         List<ArticleDto> articleDtoList = null;
         try {
-            articleDtoList = articleDao.pagenation(pager);
+            articleDtoList = articleDao.pagerAction(pager);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return articleDtoList;
     }
 
-    @Override
-    public List<ArticleLiteDto> getRecentArticles() {
-        List<ArticleLiteDto> articleLiteDtos = null;
-        try {
-            articleLiteDtos = articleDao.getRecentArticles();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return articleLiteDtos;
-    }
 
     @Override
     public ArticleDto getArticle(Integer id) {
         ArticleDto articleDto = null;
         try {
-            articleDto = articleDao.get(id);
+            articleDto = articleDao.getArticleDto(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -67,7 +58,7 @@ public class ArticleServiceImpl implements ArticleService {
     public ArticleLiteDto getPreArticle(Integer id) {
         ArticleLiteDto articleLiteDto = null;
         try {
-            articleLiteDto = articleDao.getPre(id);
+            articleLiteDto = articleDao.getPreArticleDto(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -78,7 +69,7 @@ public class ArticleServiceImpl implements ArticleService {
     public ArticleLiteDto getNextArticle(Integer id) {
         ArticleLiteDto articleLiteDto = null;
         try {
-            articleLiteDto = articleDao.getNext(id);
+            articleLiteDto = articleDao.getNextArticleDto(id);
         } catch (Exception e) {
             e.printStackTrace();
         }

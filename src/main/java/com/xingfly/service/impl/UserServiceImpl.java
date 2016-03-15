@@ -20,13 +20,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean userIsNotEmpty(String name) {
-        boolean flag = false;
+        int total = 0;
         try {
-            flag = userDao.userIsNotEmpty(name);
+            total = userDao.userIsNotEmpty(name);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return flag;
+        return total > 0 ? true : false;
     }
 
     @Override

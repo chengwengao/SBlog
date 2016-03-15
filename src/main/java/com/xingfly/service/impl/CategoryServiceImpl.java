@@ -91,12 +91,12 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public boolean exist(int categoryId) {
-        boolean state = false;
+        int state = 0;
         try {
             state = categoryDao.exist(categoryId);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return state;
+        return state > 0 ? true : false;
     }
 }
