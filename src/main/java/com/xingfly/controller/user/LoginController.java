@@ -100,8 +100,8 @@ public class LoginController {
     @RequestMapping(value = "/login/test")
     public String testLogin(HttpSession session) {
         User user = new User();
-        user.setUsername("fpf");
-        user.setPassword(MyMD5.MD5("fpf"));
+        user.setUsername("admin");
+        user.setPassword(MyMD5.MD5("admin"));
         UserDto currentUser = userService.login(user);
         session.setAttribute("currentUser", currentUser);
         return "redirect:/manage";

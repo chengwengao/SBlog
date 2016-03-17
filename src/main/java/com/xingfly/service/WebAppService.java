@@ -14,4 +14,5 @@ public interface WebAppService {
     public WebAppDto getWebDtoWebApp(Integer id);
     public Integer getArticlesView();
     public boolean webAppNotNull();
+    public List<WebApp> getWebAppDtos();
 }

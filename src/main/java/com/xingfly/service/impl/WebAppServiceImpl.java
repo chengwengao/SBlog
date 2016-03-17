@@ -7,6 +7,7 @@ import com.xingfly.service.WebAppService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by SuperS on 16/3/16.
@@ -54,6 +55,17 @@ public class WebAppServiceImpl implements WebAppService {
             e.printStackTrace();
         }
         return totalViews;
+    }
+
+    @Override
+    public List<WebApp> getWebAppDtos() {
+        List<WebApp> webApps = null;
+        try {
+            webApps = webAppDao.getWebDtos();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return webApps;
     }
 
     @Override
