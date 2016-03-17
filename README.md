@@ -1,7 +1,9 @@
 #SBlog简介
 Sblog采用Spring ＋ SpringMVC ＋ Velocity ＋ MyBatis 完成。SBlog具有以下简单的功能：管理文章、管理分类、管理用户、管理About页面。文章编辑器采用MarkDown格式。
-新增:MyBatis Dao层实现
-    SBlog基本信息设置
+
+新增:
+1. MyBatis Dao层实现
+2. SBlog基本信息设置
 
 
 ##安装方法:
