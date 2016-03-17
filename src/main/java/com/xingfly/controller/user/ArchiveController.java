@@ -2,6 +2,7 @@ package com.xingfly.controller.user;
 
 import com.xingfly.model.dto.ArticleLiteDto;
 import com.xingfly.service.ArticleService;
+import com.xingfly.service.WebAppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,10 +20,14 @@ import java.util.List;
 public class ArchiveController {
     @Autowired
     private ArticleService articleService;
+
+    @Autowired
+    private WebAppService webAppService;
      //显示归档页面
     @RequestMapping(method = RequestMethod.GET)
     public String archive(ModelMap model){
         List<ArticleLiteDto> articleLiteDtos = articleService.getArchive();
+        model.addAttribute("webAppDto",webAppService.getWebDtoWebApp(1));
         model.addAttribute("articles", articleLiteDtos);
         model.addAttribute("mainPage", "user/archive/detail.vm");
         return "index";

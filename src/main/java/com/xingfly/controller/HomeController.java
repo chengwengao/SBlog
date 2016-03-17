@@ -1,5 +1,6 @@
 package com.xingfly.controller;
 
+import com.xingfly.service.WebAppService;
 import com.xingfly.util.Pager;
 import com.xingfly.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,16 @@ public class HomeController {
 
     @Autowired
     private ArticleService articleService;
+
+    @Autowired
+    private WebAppService webAppService;
     //显示首页 分页文章列表
     @RequestMapping(method = RequestMethod.GET)
     public String home(@RequestParam(value = "pageIndex", defaultValue = "1") Integer pageIndex, ModelMap model, HttpServletRequest request) {
-        Pager pager = new Pager(pageIndex, 4, articleService.count());
+        Pager pager = new Pager(pageIndex, webAppService.getWebDtoWebApp(1).getUserPageArticleSize(), articleService.count());
         model.addAttribute("mainPage", "user/article/articlelist.vm");
+        model.addAttribute("webAppDto",webAppService.getWebDtoWebApp(1));
+
         model.addAttribute("articles", articleService.getPageArticles(pager));
         model.addAttribute("pager", pager);
         return "index";

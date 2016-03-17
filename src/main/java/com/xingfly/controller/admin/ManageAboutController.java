@@ -21,6 +21,7 @@ import javax.servlet.http.HttpSession;
 public class ManageAboutController {
     @Autowired
     private AboutService aboutService;
+
     //显示About页面
     @RequestMapping(method = RequestMethod.GET)
     public String showAbout(ModelMap model,HttpSession session){

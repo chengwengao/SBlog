@@ -105,14 +105,7 @@
                     </ul>
                 </li>
 
-##                <li class="treeview">
-##                    <a href="#">
-##                        <i class="fa fa-globe"></i> <span>友链管理</span> <i class="fa fa-angle-left pull-right"></i>
-##                    </a>
-##                    <ul class="treeview-menu">
-##                        <li><a href="/manage/showfriendlinks"><i class="fa fa-circle-o"></i> 编辑友链</a></li>
-##                    </ul>
-##                </li>
+
 
                 <li class="treeview">
                     <a href="#">
@@ -133,6 +126,14 @@
                     </ul>
                 </li>
                 -->
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-globe"></i> <span>网站管理</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/manage/web"><i class="fa fa-circle-o"></i>基础设置</a></li>
+                    </ul>
+                </li>
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-heart"></i> <span>关于管理</span> <i class="fa fa-angle-left pull-right"></i>

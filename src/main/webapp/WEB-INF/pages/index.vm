@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>XingFly</title>
+    <title>${webAppDto.webTitle}</title>
     <link rel="stylesheet" href="/static/user/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/user/widget/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/user/editor/css/editormd.css"/>

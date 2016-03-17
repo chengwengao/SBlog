@@ -5,6 +5,7 @@ import com.xingfly.model.dto.ArticleLiteDto;
 import com.xingfly.model.dto.CategoryDto;
 import com.xingfly.service.ArticleService;
 import com.xingfly.service.CategoryService;
+import com.xingfly.service.WebAppService;
 import com.xingfly.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,8 @@ public class CategoryController {
     private CategoryService categoryService;
     @Autowired
     private ArticleService articleService;
+    @Autowired
+    private WebAppService webAppService;
 //    //分页list 需要自己 写分页 的前端页面.
 //    @RequestMapping("list/{pageIndex:[0-9]+}")
 //    public String listPage(ModelMap model,@PathVariable("pageIndex")Integer pageIndex){
@@ -39,6 +42,7 @@ public class CategoryController {
     //全部list
     @RequestMapping("list")
     public String list(ModelMap model) {
+        model.addAttribute("webAppDto",webAppService.getWebDtoWebApp(1));
         List<CategoryDto> categories = categoryService.getCategories();
         model.addAttribute("mainPage", "user/category/categoryList.vm");
         model.addAttribute("categories", categories);
@@ -48,6 +52,8 @@ public class CategoryController {
     //详情
     @RequestMapping("{categoryId:[0-9]+}")
     public String detail(@PathVariable("categoryId") Integer categoryId, ModelMap model) {
+        model.addAttribute("webAppDto",webAppService.getWebDtoWebApp(1));
+
         Category category = categoryService.getCategory(categoryId);
         model.addAttribute("mainPage", "user/category/detail.vm");
         if (StringUtil.isNotEmpty(category.getName())) {

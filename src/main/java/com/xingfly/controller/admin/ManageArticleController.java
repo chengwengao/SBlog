@@ -1,11 +1,12 @@
 package com.xingfly.controller.admin;
 
 import com.xingfly.model.Article;
-import com.xingfly.util.Pager;
 import com.xingfly.model.dto.ArticleDto;
 import com.xingfly.model.dto.UserDto;
 import com.xingfly.service.ArticleService;
 import com.xingfly.service.CategoryService;
+import com.xingfly.service.WebAppService;
+import com.xingfly.util.Pager;
 import com.xingfly.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,8 @@ public class ManageArticleController {
     private CategoryService categoryService;
     @Autowired
     private ArticleService articleService;
+    @Autowired
+    private WebAppService webAppService;
 
     //显示创建页面
     @RequestMapping(value = "create", method = RequestMethod.GET)
@@ -64,7 +67,7 @@ public class ManageArticleController {
     //显示文章列表
     @RequestMapping(method = RequestMethod.GET)
     public String showListArticle(ModelMap model, @RequestParam(defaultValue = "1") Integer currentPage, HttpSession session) {
-        Pager pager = new Pager(currentPage, 10, articleService.count());
+        Pager pager = new Pager(currentPage, webAppService.getWebDtoWebApp(1).getAdminPageArticleSize(), articleService.count());
         List<ArticleDto> articles = articleService.getPageArticles(pager);
         model.addAttribute("articles", articles);
         model.addAttribute("pager", pager);
@@ -129,11 +132,16 @@ public class ManageArticleController {
     public String search(String content, ModelMap model, HttpSession session) {
         Article article = new Article();
         article.setTitle(content);
-        Pager pager = new Pager(1, articleService.searchArticles(article).size(), articleService.searchArticles(article).size());
-        List<ArticleDto> articleDtos = articleService.searchArticles(article);
         model.addAttribute("user", (UserDto) session.getAttribute("currentUser"));
+        List<ArticleDto> articleDtos = articleService.searchArticles(article);
+        Pager pager = new Pager(1, 10, articleService.searchArticles(article).size());
+        if (articleDtos.size() > 0) {
+            model.addAttribute("articles", articleDtos);
+        }else{
+            model.addAttribute("articles", null);
+        }
         model.addAttribute("pager", pager);
-        model.addAttribute("articles", articleDtos);
+
         model.addAttribute("mainPage", "admin/article/listArticle.vm");
         return "admin/index";
     }
